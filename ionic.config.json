@@ -1,0 +1,8 @@
+{
+  "name": "shareNotes",
+  "app_id": "ca9ad779",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Share your HandNotes
+    </ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-searchbar id="search"  showCancelButton="true" (search)="onSearch($event)"(ionCancel)="isSearchbarOpened=false"></ion-searchbar>
+    <div *ngIf="isLoggedIn; else facebookLogin">
+      <h2>Hi, {{users.name}} ({{users.email}})</h2>
+      <p>
+        Gender: {{users.gender}}
+      </p>
+      <p>
+        <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
+      </p>
+      <p>
+        <button ion-button icon-right (click)="logout()">
+          Logout
+        </button>
+      </p>
+    </div>
+    <ng-template #facebookLogin>
+      <button ion-button full (click)="login()">
+        Login with Facebook
+        <ion-icon name="logo-facebook"></ion-icon>
+      </button>
+    </ng-template>
+</ion-content>
